@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using FractalPainting.App.Actions;
 using FractalPainting.Infrastructure.Common;
-using FractalPainting.Infrastructure.Injection;
 using FractalPainting.Infrastructure.UiActions;
-using Ninject;
 
 namespace FractalPainting.App
 {
@@ -22,8 +19,6 @@ namespace FractalPainting.App
             pictureBox.RecreateImage(imageSettings);
             pictureBox.Dock = DockStyle.Fill;
             Controls.Add(pictureBox);
-
-            DependencyInjector.Inject(actions, new Palette());
         }
 
         protected override void OnShown(EventArgs e)
