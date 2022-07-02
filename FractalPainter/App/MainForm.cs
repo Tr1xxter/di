@@ -35,6 +35,9 @@ namespace FractalPainting.App
             var container = new StandardKernel();
             container.Bind<IObjectSerializer>().To<XmlObjectSerializer>();
             container.Bind<IBlobStorage>().To<FileBlobStorage>();
+            container.Bind<ImageSettings>()
+                .ToMethod(context => context.Kernel.Get<AppSettings>().ImageSettings);
+            
             return container.Get<SettingsManager>();
         }
 

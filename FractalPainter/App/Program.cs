@@ -32,6 +32,7 @@ namespace FractalPainting.App
 
                 container.Bind<IDragonPainterFactory>().ToFactory();
 
+
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(container.Get<MainForm>());
